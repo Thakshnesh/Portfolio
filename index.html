@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Thakshnesh B — Electronics Engineering student specializing in VLSI, embedded systems, and AI." />
+  <title>Thakshnesh B | Electronics Engineer Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='700'>T</text></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: "#2563eb", 600: "#2563eb", 700: "#1d4ed8" },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="antialiased">
+
+  <!-- Scroll progress -->
+  <div id="scroll-progress" class="fixed top-0 left-0 right-0 h-0.5 bg-brand z-[60]"></div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6">
+      <a href="#" class="font-display font-bold text-lg">Thakshnesh<span class="text-brand">.</span></a>
+
+      <ul class="hidden md:flex items-center gap-1">
+        <li><a href="#about" class="nav-link px-3 py-2 text-sm font-medium rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">About</a></li>
+        <li><a href="#education" class="nav-link px-3 py-2 text-sm font-medium rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">Education</a></li>
+        <li><a href="#projects" class="nav-link px-3 py-2 text-sm font-medium rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">Projects</a></li>
+        <li><a href="#skills" class="nav-link px-3 py-2 text-sm font-medium rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">Skills</a></li>
+        <li><a href="#achievements" class="nav-link px-3 py-2 text-sm font-medium rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">Achievements</a></li>
+        <li><a href="#contact" class="nav-link px-3 py-2 text-sm font-medium rounded-lg text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-lg text-[var(--muted)] hover:bg-[var(--surface-muted)] transition-colors">
+          <svg id="icon-sun" class="hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="hidden sm:inline-flex px-4 py-2 text-sm font-semibold rounded-lg bg-brand text-white hover:bg-brand-700 transition-colors">Get in Touch</a>
+        <button id="menu-btn" aria-label="Menu" class="md:hidden p-2 rounded-lg text-[var(--muted)]">
+          <svg id="icon-menu-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="icon-menu-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden border-b border-[var(--border)] bg-[var(--surface)]">
+      <ul class="px-4 py-4 space-y-1">
+        <li><a href="#about" class="block px-4 py-3 text-sm font-medium rounded-lg text-[var(--muted)]">About</a></li>
+        <li><a href="#education" class="block px-4 py-3 text-sm font-medium rounded-lg text-[var(--muted)]">Education</a></li>
+        <li><a href="#projects" class="block px-4 py-3 text-sm font-medium rounded-lg text-[var(--muted)]">Projects</a></li>
+        <li><a href="#skills" class="block px-4 py-3 text-sm font-medium rounded-lg text-[var(--muted)]">Skills</a></li>
+        <li><a href="#achievements" class="block px-4 py-3 text-sm font-medium rounded-lg text-[var(--muted)]">Achievements</a></li>
+        <li><a href="#contact" class="block px-4 py-3 text-sm font-semibold rounded-lg bg-brand text-white text-center mt-2">Get in Touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 grid-bg opacity-40"></div>
+      <div class="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-brand glow-orb"></div>
+      <div class="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-violet-600 glow-orb"></div>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16 text-center">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium bg-blue-500/10 text-brand border border-blue-500/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Available for opportunities
+        </span>
+
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+          Hi, I'm <span class="gradient-text">Thakshnesh B</span>
+        </h1>
+
+        <div class="text-xl sm:text-2xl text-[var(--muted)] font-medium mb-6 h-10">
+          <span id="typewriter"></span>
+        </div>
+
+        <p class="max-w-2xl mx-auto text-[var(--muted)] text-lg leading-relaxed mb-10">
+          Electronics Engineering student passionate about embedded systems, AI, and building innovative solutions at the intersection of hardware and software.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
+          <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand-700 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25">View My Work</a>
+          <a href="mailto:thakshnesh@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[var(--border)] font-semibold hover:bg-[var(--surface-muted)] transition-all hover:-translate-y-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Contact Me
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-[var(--muted)]">
+          <a href="mailto:thakshnesh@gmail.com" class="flex items-center gap-2 hover:text-brand transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            thakshnesh@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/thakshnesh-b-585928381" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-brand transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--muted)] hover:text-brand transition-colors" aria-label="Scroll down">
+          <span class="text-xs font-medium tracking-widest uppercase">Scroll</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-bounce"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-6xl mx-auto reveal">
+        <div class="grid lg:grid-cols-5 gap-12 items-center">
+          <div class="lg:col-span-2">
+            <p class="text-brand text-sm font-semibold tracking-widest uppercase mb-3">About Me</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">Building the Future with Technology</h2>
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-brand border border-blue-500/20">Business Analytics</span>
+              <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-brand border border-blue-500/20">Project Management</span>
+              <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-brand border border-blue-500/20">Artificial Intelligence</span>
+              <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-brand border border-blue-500/20">Embedded Systems</span>
+              <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-brand border border-blue-500/20">VLSI Design</span>
+            </div>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="card p-8 relative overflow-hidden">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-display font-semibold text-lg mb-3">Career Objective</h3>
+                  <p class="text-[var(--muted)] leading-relaxed">Driven and curious Electronics Engineering undergraduate with interests in Business Analytics, Project Management, and Artificial Intelligence. Eager to gain practical experience and passionate about combining analytical thinking, technology, and creativity to build innovative solutions while continuously growing both technically and professionally.</p>
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-3 gap-4 mt-8 pt-8 border-t border-[var(--border)]">
+                <div><p class="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-1">Focus</p><p class="font-medium">Electronics & VLSI</p></div>
+                <div><p class="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-1">Location</p><p class="font-medium">Tiruchengode, Tamil Nadu</p></div>
+                <div><p class="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-1">Status</p><p class="font-medium">Undergraduate</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="px-4 sm:px-6 lg:px-8 py-20 lg:py-28 bg-[var(--surface-muted)]/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <p class="text-brand text-sm font-semibold tracking-widest uppercase mb-3">Education</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Academic Journey</h2>
+        </div>
+        <div class="max-w-3xl mx-auto reveal">
+          <div class="card card-hover p-6 sm:p-8">
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+              <div>
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-green-500/10 text-green-600 border border-green-500/20 mb-3">Present</span>
+                <h3 class="font-display text-xl font-bold">B.E. Electronics Engineering (VLSI Design&Technology)</h3>
+                <p class="text-brand font-medium mt-1">K. S. Rangasamy College of Technology</p>
+              </div>
+              <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <div><p class="text-xs text-[var(--muted)]">CGPA</p><p class="font-bold text-brand">8.37</p></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-[var(--muted)]">
+              <span class="flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Tiruchengode
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                2025 – 2029
+              </span>
+              <span class="text-xs">(up to 1st semester)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <p class="text-brand text-sm font-semibold tracking-widest uppercase mb-3">Projects</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-2">Featured Work</h2>
+          <p class="text-[var(--muted)] max-w-xl mx-auto">Hands-on embedded systems projects combining sensors, microcontrollers, and real-world problem solving.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <article class="card card-hover p-6 sm:p-8 reveal border-amber-500/30">
+            <div class="w-12 h-12 rounded-xl bg-[var(--surface-muted)] flex items-center justify-center mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-1">Solar Tracking System</h3>
+            <p class="text-sm text-brand font-medium mb-4">Arduino & LDR Sensors</p>
+            <p class="text-[var(--muted)] text-sm leading-relaxed mb-6">Developed an automatic solar tracking system using Arduino and LDR sensors to maximize solar energy absorption. The system continuously monitors sunlight intensity and adjusts the solar panel position for maximum efficiency.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">Arduino</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">LDR Sensors</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">Embedded Systems</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">C</span>
+            </div>
+          </article>
+          <article class="card card-hover p-6 sm:p-8 reveal border-red-500/30">
+            <div class="w-12 h-12 rounded-xl bg-[var(--surface-muted)] flex items-center justify-center mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-1">Smoke Detection System</h3>
+            <p class="text-sm text-brand font-medium mb-4">MQ-2 Sensor & Arduino</p>
+            <p class="text-[var(--muted)] text-sm leading-relaxed mb-6">Built a real-time smoke and harmful gas detection system using MQ-2 sensor and Arduino. Provides instant LED alerts for safety and environmental monitoring with hands-on sensor interfacing experience.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">Arduino</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">MQ-2 Sensor</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">IoT</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-[var(--surface-muted)] border border-[var(--border)]">Safety Systems</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="px-4 sm:px-6 lg:px-8 py-20 lg:py-28 bg-[var(--surface-muted)]/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <p class="text-brand text-sm font-semibold tracking-widest uppercase mb-3">Skills</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">What I Bring to the Table</h2>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div class="card p-6 reveal">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.54"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.54"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg">Soft Skills</h3>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-muted)]"><span class="text-sm font-medium">Communication</span></div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-muted)]"><span class="text-sm font-medium">Leadership</span></div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-muted)]"><span class="text-sm font-medium">Problem Solving</span></div>
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-muted)]"><span class="text-sm font-medium">Analytical Thinking</span></div>
+            </div>
+          </div>
+          <div class="card p-6 reveal">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg">Technical Skills</h3>
+            </div>
+            <div class="space-y-5">
+              <div><div class="flex justify-between mb-2"><span class="text-sm font-medium">C</span><span class="text-xs text-[var(--muted)]">75%</span></div><div class="h-2 rounded-full bg-[var(--surface-muted)] overflow-hidden"><div class="skill-bar h-full rounded-full bg-gradient-to-r from-brand to-violet-500" style="--level:75%"></div></div></div>
+              <div><div class="flex justify-between mb-2"><span class="text-sm font-medium">Java</span><span class="text-xs text-[var(--muted)]">70%</span></div><div class="h-2 rounded-full bg-[var(--surface-muted)] overflow-hidden"><div class="skill-bar h-full rounded-full bg-gradient-to-r from-brand to-violet-500" style="--level:70%"></div></div></div>
+              <div><div class="flex justify-between mb-2"><span class="text-sm font-medium">Python</span><span class="text-xs text-[var(--muted)]">80%</span></div><div class="h-2 rounded-full bg-[var(--surface-muted)] overflow-hidden"><div class="skill-bar h-full rounded-full bg-gradient-to-r from-brand to-violet-500" style="--level:80%"></div></div></div>
+            </div>
+          </div>
+          <div class="card p-6 reveal">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg">Tools & Platforms</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-2 rounded-lg text-sm font-medium bg-[var(--surface-muted)] border border-[var(--border)]">Eclipse IDE</span>
+              <span class="px-3 py-2 rounded-lg text-sm font-medium bg-[var(--surface-muted)] border border-[var(--border)]">Visual Studio Code</span>
+              <span class="px-3 py-2 rounded-lg text-sm font-medium bg-[var(--surface-muted)] border border-[var(--border)]">Canva</span>
+              <span class="px-3 py-2 rounded-lg text-sm font-medium bg-[var(--surface-muted)] border border-[var(--border)]">MIT App Inventor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <p class="text-brand text-sm font-semibold tracking-widest uppercase mb-3">Achievements</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Certifications & Milestones</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="card card-hover p-6 text-center reveal">
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-lg mb-1">NPTEL Certification</h3>
+            <p class="text-brand font-medium text-sm mb-2">Soft Skill Development | Elite + Silver Certificates</p>
+            <p class="text-xs text-[var(--muted)]">NPTEL (IIT Madras) · 2026</p>
+          </div>
+          <div class="card p-6 text-center border-dashed flex flex-col items-center justify-center min-h-[200px] reveal">
+            <div class="w-14 h-14 rounded-2xl bg-[var(--surface-muted)] flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="text-[var(--muted)] text-sm">More achievements coming soon...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="px-4 sm:px-6 lg:px-8 py-20 lg:py-28 bg-[var(--surface-muted)]/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <p class="text-brand text-sm font-semibold tracking-widest uppercase mb-3">Contact</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-2">Let's Work Together</h2>
+          <p class="text-[var(--muted)] max-w-xl mx-auto">Have a project in mind or want to connect? I'd love to hear from you.</p>
+        </div>
+        <div class="grid lg:grid-cols-5 gap-10 max-w-5xl mx-auto reveal">
+          <div class="lg:col-span-2 space-y-4">
+            <a href="mailto:thakshnesh@gmail.com" class="flex items-center gap-4 p-4 rounded-xl card card-hover">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><p class="text-xs text-[var(--muted)] uppercase tracking-wider">Email</p><p class="text-sm font-medium">thakshnesh@gmail.com</p></div>
+            </a>
+            <a href="https://www.linkedin.com/in/thakshnesh-b-585928381" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl card card-hover">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+              <div><p class="text-xs text-[var(--muted)] uppercase tracking-wider">LinkedIn</p><p class="text-sm font-medium">Connect with me</p></div>
+            </a>
+            <div class="flex items-center gap-4 p-4 rounded-xl card">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><p class="text-xs text-[var(--muted)] uppercase tracking-wider">Location</p><p class="text-sm font-medium">Tiruchengode, Tamil Nadu</p></div>
+            </div>
+          </div>
+          <form id="contact-form" class="lg:col-span-3 card p-6 sm:p-8 space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div><label for="name" class="block text-sm font-medium mb-2">Name</label><input id="name" name="name" type="text" required placeholder="Your name" class="w-full px-4 py-3 rounded-xl bg-[var(--surface-muted)] border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" /></div>
+              <div><label for="email" class="block text-sm font-medium mb-2">Email</label><input id="email" name="email" type="email" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-xl bg-[var(--surface-muted)] border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" /></div>
+            </div>
+            <div><label for="message" class="block text-sm font-medium mb-2">Message</label><textarea id="message" name="message" required rows="5" placeholder="Tell me about your project or opportunity..." class="w-full px-4 py-3 rounded-xl bg-[var(--surface-muted)] border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none"></textarea></div>
+            <button type="submit" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-blue-500/25">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-[var(--border)] py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-[var(--muted)]">© 2025 <span class="font-semibold text-[var(--foreground)]">Thakshnesh B</span>. All rights reserved.</p>
+      <p class="flex items-center gap-1.5 text-sm text-[var(--muted)]">Made by Thakshnesh B</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
